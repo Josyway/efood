@@ -62,7 +62,7 @@ const restaurantes: Food[] = [
   }
 ]
 
-const Pizzas = () => (
+const Doces = () => (
   <>
     <Header />
     <Banner title="La Pizzaria" image={banner} origen="Pizzaria" />
@@ -70,4 +70,4 @@ const Pizzas = () => (
   </>
 )
 
-export default Pizzas
+export default Doces

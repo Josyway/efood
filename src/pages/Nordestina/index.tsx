@@ -1,89 +1,73 @@
 import Food from '../../models/Food'
 
-import star from '../../assets/images/star.png'
+import Header from '../../components/Header'
+import FoodsList from '../../components/FoodsList'
 
-import sushi from '../../assets/images/sushi.png'
-import camarao from '../../assets/images/camarao.png'
-import tapioca from '../../assets/images/tapioca.png'
-import pao_minas from '../../assets/images/pao_minas.png'
-import hamburgue from '../../assets/images/hamburgue.png'
-import torta from '../../assets/images/torta.png'
-import Hero from '../../components/Hero'
-import ProductsList from '../../components/ProductsList'
+import banner from '../../assets/images/nordestina/tapiocacard.png'
+import baiao from '../../assets/images/nordestina/baiao.png'
+import cuscuz from '../../assets/images/nordestina/cuscuz.png'
+import paçoca from '../../assets/images/nordestina/paçoca.png'
+import tapioca from '../../assets/images/nordestina/tapioca.png'
+import carne_sol from '../../assets/images/nordestina/carne_sol.png'
+import escondidinho from '../../assets/images/nordestina/escondidinho.png'
+import Banner from '../../components/Banner'
 
 const restaurantes: Food[] = [
   {
     id: 1,
-    title: 'Hioki Suchi',
-    category: '4,9',
-    star: star,
+    title: ['Baião de dois'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Destaque do dia', 'Japonesa'],
-    image: sushi,
-    plus: 'Saiba mais'
+      'O baião de dois é um prato feito de arroz, feijão, carne seca e queijo coalho. Há quem diga que a origem do nome é pela dança típica nordestina, o baião.',
+    image: baiao
   },
   {
-    id: 1,
-    title: 'La Dolce Vita Trattoria',
-    category: '4,6',
-    star: star,
+    id: 2,
+    title: ['Cuscuz'],
+    add: 'Adicionar ao carrinho',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infos: ['Italiana'],
-    image: camarao,
-    plus: 'Saiba mais'
+      'O cuscuz é um prato de origem africana que é muito consumido no nordeste e na região norte do país. Ele pode ser feito à base de farinha ou polvilho, milho, arroz ou mandioca.',
+    image: cuscuz
   },
   {
-    id: 1,
-    title: 'Delicia Nordestina',
-    category: '4,9',
-    star: star,
+    id: 3,
+    title: ['Paçoca de carne'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Nordestina'],
-    image: tapioca,
-    plus: 'Saiba mais'
+      'A paçoca de carne é feita com farinha de mandioca, cebola e carne seca moída. Pode ser consumida junto com o baião de dois.',
+    image: paçoca
   },
   {
-    id: 1,
-    title: 'Forno Mineiro',
-    category: '4,9',
-    star: star,
+    id: 4,
+    title: ['Carne de sol'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Mineira'],
-    image: pao_minas,
-    plus: 'Saiba mais'
+      'A carne de sol é muito típica do nordeste brasileiro, e também é chamada de carne de vento e carne do sertão. Apesar do nome, não há exposição aos raios solares.',
+    image: carne_sol
   },
   {
-    id: 1,
-    title: 'La Vita Doces',
-    category: '4,9',
-    star: star,
+    id: 5,
+    title: ['Tapioca'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Doceria'],
-    image: torta,
-    plus: 'Saiba mais'
+      'Ela pode ser consumida com ou sem manteiga, com coco e também com outros recheios como frango, queijo e atum.',
+    image: tapioca
   },
   {
-    id: 1,
-    title: 'Belo Burg',
-    category: '4,9',
-    star: star,
+    id: 6,
+    title: ['Escondidinho de Carne-Seca'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Hamburgueria'],
-    image: hamburgue,
-    plus: 'Saiba mais'
+      'Essa delícia é recheada com carne-seca ao molho vermelho e vem coberta por uma camada de purê de macaxeira (também conhecida como mandioca) e muçarela.',
+    image: escondidinho
   }
 ]
 
 const Nordestina = () => (
   <>
-    <Hero />
-    <ProductsList foods={restaurantes} title="" />
+    <Header />
+    <Banner title="Delicia Nordestina" image={banner} origen="Nordestina" />
+    <FoodsList foods={restaurantes} title="" />
   </>
 )
 

@@ -1,89 +1,72 @@
 import Food from '../../models/Food'
+import Header from '../../components/Header'
+import FoodsList from '../../components/FoodsList'
+import Banner from '../../components/Banner'
 
-import star from '../../assets/images/star.png'
-
-import sushi from '../../assets/images/sushi.png'
-import camarao from '../../assets/images/camarao.png'
-import tapioca from '../../assets/images/tapioca.png'
-import pao_minas from '../../assets/images/pao_minas.png'
-import hamburgue from '../../assets/images/hamburgue.png'
-import torta from '../../assets/images/torta.png'
-import Hero from '../../components/Hero'
-import ProductsList from '../../components/ProductsList'
+import banner from '../../assets/images/hamburgueria/hamburgue.png'
+import cheeseburger from '../../assets/images/hamburgueria/cheeseburger.png'
+import frango from '../../assets/images/hamburgueria/frango.png'
+import picanha from '../../assets/images/hamburgueria/picanha.png'
+import angus from '../../assets/images/hamburgueria/angus.png'
+import vegetal from '../../assets/images/hamburgueria/vegetal.png'
+import recheado from '../../assets/images/hamburgueria/recheado.png'
 
 const restaurantes: Food[] = [
   {
     id: 1,
-    title: 'Hioki Suchi',
-    category: '4,9',
-    star: star,
+    title: ['Clássico cheeseburger'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Destaque do dia', 'Japonesa'],
-    image: sushi,
-    plus: 'Saiba mais'
+      'Com uma suculenta carne bovina, queijo derretido, alface, tomate e um molho delicioso para finalizar esta obra-prima.',
+    image: cheeseburger
   },
   {
-    id: 1,
-    title: 'La Dolce Vita Trattoria',
-    category: '4,6',
-    star: star,
+    id: 2,
+    title: ['Hambúrguer de frango'],
+    add: 'Adicionar ao carrinho',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infos: ['Italiana'],
-    image: camarao,
-    plus: 'Saiba mais'
+      'Sempre feito com peito de frango, ele pode ser preparado com aveia, cebola, abobrinha, cenoura e manjericão, entre outros insumos e temperos.',
+    image: frango
   },
   {
-    id: 1,
-    title: 'Delicia Nordestina',
-    category: '4,9',
-    star: star,
+    id: 3,
+    title: ['Hambúrguer de picanha'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Nordestina'],
-    image: tapioca,
-    plus: 'Saiba mais'
+      'A picanha é nobre e muito saborosa e, justamente por isso, proporciona uma experiência única quando transformada em hambúrguer.',
+    image: picanha
   },
   {
-    id: 1,
-    title: 'Forno Mineiro',
-    category: '4,9',
-    star: star,
+    id: 4,
+    title: ['Hambúrguer angus'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Mineira'],
-    image: pao_minas,
-    plus: 'Saiba mais'
+      'Angus é uma raça bovina de origem escocesa reconhecida ao redor do mundo por sua altíssima qualidade. ',
+    image: angus
   },
   {
-    id: 1,
-    title: 'La Vita Doces',
-    category: '4,9',
-    star: star,
+    id: 5,
+    title: ['Hambúrguer vegetal'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Doceria'],
-    image: torta,
-    plus: 'Saiba mais'
+      'Entre os tipos mais conhecidos estão o hambúrguer de soja e o hambúrguer de ervilhas – ambos com sabor, textura e aparência de carne.',
+    image: vegetal
   },
   {
-    id: 1,
-    title: 'Belo Burg',
-    category: '4,9',
-    star: star,
+    id: 6,
+    title: ['Hambúrguer recheado'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Hamburgueria'],
-    image: hamburgue,
-    plus: 'Saiba mais'
+      'A opção recheada pode contar com os ingredientes de sempre – queijo, carne e alface – com alguns ingredientes a mais para deixá-lo mais elaborado.',
+    image: recheado
   }
 ]
 
 const Hamburgue = () => (
   <>
-    <Hero />
-    <ProductsList foods={restaurantes} title="" />
+    <Header />
+    <Banner title="Belo Burg" image={banner} origen="Hambusgueria" />
+    <FoodsList foods={restaurantes} title="" />
   </>
 )
 

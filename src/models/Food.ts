@@ -1,31 +1,22 @@
 class Food {
-  title: string
-  category: string
-  star: string
+  title: string[]
   description: string
-  infos: string[]
   image: string
+  add: string
   id: number
-  plus: string
 
   constructor(
     id: number,
-    title: string,
-    category: string,
-    star: string,
+    title: string[],
     description: string,
-    infos: string[],
     image: string,
-    plus: string
+    add: string
   ) {
     this.id = id
     this.title = title
-    this.category = category
-    this.star = star
     this.description = description
-    this.infos = infos
     this.image = image
-    this.plus = plus
+    this.add = add
   }
 }
 

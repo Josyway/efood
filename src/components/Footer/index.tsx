@@ -1,8 +1,8 @@
 import { Container, FooterSection, Link, Links, SectionInfo } from './styles'
-import logo from '../../assets/images/logo.png'
-import instagram from '../../assets/images/instagram.png'
-import facebook from '../../assets/images/facebook.png'
-import twiterr from '../../assets/images/twitter.png'
+import logo from '../../assets/images/logo/logo.png'
+import instagram from '../../assets/images/logo/instagram.png'
+import facebook from '../../assets/images/logo/facebook.png'
+import twiterr from '../../assets/images/logo/twitter.png'
 
 const Footer = () => (
   <Container>

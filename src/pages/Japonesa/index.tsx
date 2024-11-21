@@ -1,89 +1,72 @@
 import Food from '../../models/Food'
+import Header from '../../components/Header'
 
-import star from '../../assets/images/star.png'
-
-import sushi from '../../assets/images/sushi.png'
-import camarao from '../../assets/images/camarao.png'
-import tapioca from '../../assets/images/tapioca.png'
-import pao_minas from '../../assets/images/pao_minas.png'
-import hamburgue from '../../assets/images/hamburgue.png'
-import torta from '../../assets/images/torta.png'
-import Hero from '../../components/Hero'
-import ProductsList from '../../components/ProductsList'
+import banner from '../../assets/images/japonesa/sushicard.png'
+import sushi from '../../assets/images/japonesa/sushi.png'
+import sashimi from '../../assets/images/japonesa/sashimi.png'
+import yakisoba from '../../assets/images/japonesa/yakisoba.png'
+import nigiri from '../../assets/images/japonesa/nigiri.png'
+import nikuman from '../../assets/images/japonesa/nikuman.png'
+import temaki from '../../assets/images/japonesa/temaki.png'
+import FoodsList from '../../components/FoodsList'
+import Banner from '../../components/Banner'
 
 const restaurantes: Food[] = [
   {
     id: 1,
-    title: 'Hioki Suchi',
-    category: '4,9',
-    star: star,
+    title: ['Suchi'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Destaque do dia', 'Japonesa'],
-    image: sushi,
-    plus: 'Saiba mais'
+      'É um bolinho de arroz temperado com vinagre e coberto por uma fatia de peixe cru, misturado com algas ou frutos do mar.',
+    image: sushi
   },
   {
-    id: 1,
-    title: 'La Dolce Vita Trattoria',
-    category: '4,6',
-    star: star,
+    id: 2,
+    title: ['Sashimi'],
+    add: 'Adicionar ao carrinho',
     description:
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-    infos: ['Italiana'],
-    image: camarao,
-    plus: 'Saiba mais'
+      'É feito de fatias finas de peixe ou de frutos do mar em estado cru. Pode ser usado peixe de água doce ou salgada.',
+    image: sashimi
   },
   {
-    id: 1,
-    title: 'Delicia Nordestina',
-    category: '4,9',
-    star: star,
+    id: 3,
+    title: ['Temaki'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Nordestina'],
-    image: tapioca,
-    plus: 'Saiba mais'
+      'É um cone de alga recheado com arroz, peixe e pepino. A alga marinha do temaki tem que estar bem sequinha e crocante.',
+    image: temaki
   },
   {
-    id: 1,
-    title: 'Forno Mineiro',
-    category: '4,9',
-    star: star,
+    id: 4,
+    title: ['Yakisoba'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Mineira'],
-    image: pao_minas,
-    plus: 'Saiba mais'
+      'É uma uma variação de macarrão semi-frito na chapa, servido com legumes e molho shoyu.',
+    image: yakisoba
   },
   {
-    id: 1,
-    title: 'La Vita Doces',
-    category: '4,9',
-    star: star,
+    id: 5,
+    title: ['Nigiri'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Doceria'],
-    image: torta,
-    plus: 'Saiba mais'
+      'É um bolinho de arroz em forma alongada coberto com fatias de peixe cru ou polvo e camarões.',
+    image: nigiri
   },
   {
-    id: 1,
-    title: 'Belo Burg',
-    category: '4,9',
-    star: star,
+    id: 6,
+    title: ['Nikuman'],
+    add: 'Adicionar ao carrinho',
     description:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    infos: ['Hamburgueria'],
-    image: hamburgue,
-    plus: 'Saiba mais'
+      'é uma espécie de pão japonês cozido no vapor e com recheio de carne de porco.',
+    image: nikuman
   }
 ]
 
 const Jamonesa = () => (
   <>
-    <Hero />
-    <ProductsList foods={restaurantes} title="" />
+    <Header />
+    <Banner title="Hioki Suchi" image={banner} origen="Japonesa" />
+    <FoodsList foods={restaurantes} title="" />
   </>
 )
 

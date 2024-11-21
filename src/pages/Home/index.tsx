@@ -1,89 +1,88 @@
-import Food from '../../models/Food'
-
-import star from '../../assets/images/star.png'
-
-import sushi from '../../assets/images/sushi.png'
-import camarao from '../../assets/images/camarao.png'
-import tapioca from '../../assets/images/tapioca.png'
-import pao_minas from '../../assets/images/pao_minas.png'
-import hamburgue from '../../assets/images/hamburgue.png'
-import torta from '../../assets/images/torta.png'
+import Option from '../../models/Option'
 import Hero from '../../components/Hero'
-import ProductsList from '../../components/ProductsList'
+import ProductsList from '../../components/RestaurantList'
 
-const restaurantes: Food[] = [
+import star from '../../assets/images/logo/star.png'
+import sushi from '../../assets/images/japonesa/sushicard.png'
+import camarao from '../../assets/images/italiana/camarao.png'
+import tapioca from '../../assets/images/nordestina/tapiocacard.png'
+import pao_minas from '../../assets/images/mineira/pao_minas.png'
+import hamburgue from '../../assets/images/hamburgueria/hamburgue.png'
+import pizza from '../../assets/images/pizzaria/pizzacard.png'
+
+const restaurantes: Option[] = [
   {
     id: 1,
     title: 'Hioki Suchi',
-    category: '4,9',
+    category: '4,7',
     star: star,
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     infos: ['Destaque do dia', 'Japonesa'],
     image: sushi,
-    plus: 'Saiba mais'
+    plus: '/japonesa'
   },
   {
-    id: 1,
+    id: 2,
     title: 'La Dolce Vita Trattoria',
-    category: '4,6',
+    category: '4,8',
     star: star,
     description:
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
     infos: ['Italiana'],
     image: camarao,
-    plus: 'Saiba mais'
+    plus: '/italiana'
   },
   {
-    id: 1,
+    id: 3,
     title: 'Delicia Nordestina',
-    category: '4,9',
+    category: '5,0',
     star: star,
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     infos: ['Nordestina'],
     image: tapioca,
-    plus: 'Saiba mais'
+    plus: '/nordestina'
   },
   {
-    id: 1,
+    id: 4,
     title: 'Forno Mineiro',
-    category: '4,9',
+    category: '4,7',
     star: star,
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     infos: ['Mineira'],
     image: pao_minas,
-    plus: 'Saiba mais'
+    plus: '/mineira'
   },
   {
-    id: 1,
-    title: 'La Vita Doces',
+    id: 5,
+    title: 'La Pizzaria',
     category: '4,9',
     star: star,
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     infos: ['Doceria'],
-    image: torta,
-    plus: 'Saiba mais'
+    image: pizza,
+    plus: '/pizzaria'
   },
   {
-    id: 1,
+    id: 6,
     title: 'Belo Burg',
-    category: '4,9',
+    category: '4,8',
     star: star,
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
     infos: ['Hamburgueria'],
     image: hamburgue,
-    plus: 'Saiba mais'
+    plus: '/hamburgueria'
   }
 ]
 
 const Home = () => (
   <>
     <Hero />
-    <ProductsList foods={restaurantes} title="" />
+    <ProductsList options={restaurantes} title="" />
   </>
 )
 

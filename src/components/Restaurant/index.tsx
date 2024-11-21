@@ -1,3 +1,4 @@
+import Button from '../Button'
 import Tag from '../Tag'
 import { Post, Descricao, Note, Infos, Titulo, Info } from './styles'
 
@@ -11,7 +12,7 @@ type Props = {
   plus: string
 }
 
-const Product = ({
+const Restaurant = ({
   title,
   category,
   description,
@@ -36,9 +37,11 @@ const Product = ({
         </div>
       </Note>
       <Descricao>{description}</Descricao>
-      <Tag>{plus}</Tag>
+      <Button type="link" to={plus} title="Clique e conheça o restaurante">
+        Saiba Mais
+      </Button>
     </Info>
   </Post>
 )
 
-export default Product
+export default Restaurant

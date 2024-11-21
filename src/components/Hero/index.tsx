@@ -1,5 +1,5 @@
-import hero from '../../assets/images/hero.png'
-import logo from '../../assets/images/logo.png'
+import hero from '../../assets/images/logo/hero.png'
+import logo from '../../assets/images/logo/logo.png'
 import { Title, Vector, Container } from './styles'
 
 const Hero = () => (
