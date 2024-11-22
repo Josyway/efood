@@ -25,6 +25,10 @@ export const Imagem = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     content: '';
   }
+  .container {
+    z-index: 1;
+    position: relative;
+  }
 `
 export const Presentation = styled.div`
   position: absolute;
