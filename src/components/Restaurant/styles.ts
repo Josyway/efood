@@ -1,15 +1,23 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
+import { Link } from 'react-router-dom'
 
-export const Post = styled.div`
+export const Post = styled(Link)`
   background-color: ${cores.branco};
   border: 1px solid ${cores.salmon};
   color: ${cores.salmon};
   position: relative;
+  text-decoration: none;
 
   ${TagContainer} {
     margin-right: 8px;
+  }
+
+  img {
+    width: 100%;
+    max-height: 217px;
+    object-fit: cover;
   }
 `
 export const Note = styled.div`

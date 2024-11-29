@@ -1,10 +1,10 @@
-import Option from '../../models/Option'
+import { restaurant } from '../../pages/Home'
 import Restaurant from '../Restaurant'
 import { List, Title } from './styles'
 
 export type Props = {
   title: string
-  options: Option[]
+  options: restaurant[]
 }
 
 const RestaurantList = ({ title, options }: Props) => (
@@ -15,13 +15,12 @@ const RestaurantList = ({ title, options }: Props) => (
         {options.map((option) => (
           <Restaurant
             key={option.id}
-            category={option.category}
-            star={option.star}
-            description={option.description}
-            image={option.image}
-            infos={option.infos}
-            title={option.title}
-            plus={option.plus}
+            id={option.id}
+            type={option.tipo}
+            assessment={option.avaliacao}
+            description={option.descricao}
+            cover={option.capa}
+            title={[option.titulo]}
           />
         ))}
       </List>

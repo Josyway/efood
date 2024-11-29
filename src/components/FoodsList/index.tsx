@@ -1,10 +1,10 @@
-import Food from '../../models/Food'
+import { Menu } from '../../pages/Home'
 import Foods from '../Foods'
 import { List, Title } from './styled'
 
 export type Props = {
   title: string
-  foods: Food[]
+  foods: Menu[]
 }
 
 const FoodsList = ({ title, foods }: Props) => (
@@ -14,10 +14,12 @@ const FoodsList = ({ title, foods }: Props) => (
       {foods.map((food) => (
         <Foods
           key={food.id}
-          title={food.title}
-          description={food.description}
-          image={food.image}
-          add={food.add}
+          id={food.id}
+          image={food.foto}
+          title={[food.nome]}
+          description={food.descricao}
+          portion={food.porcao}
+          price={food.preco}
         />
       ))}
     </List>

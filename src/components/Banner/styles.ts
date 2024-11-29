@@ -11,6 +11,9 @@ export const Imagem = styled.div`
   font-weight: bold;
   position: relative;
   color: ${cores.branco};
+  object-fit: cover;
+  align-items: center;
+
   .container {
     padding-top: 340px;
     display: flex;
