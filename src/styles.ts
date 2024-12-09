@@ -7,6 +7,11 @@ export const cores = {
   bergeEscuro: '#FFEBD9'
 }
 
+export const breackpoint = {
+  desktop: '1024px',
+  tablet: '760px'
+}
+
 export const EstiloGlobal = createGlobalStyle`
 * {
   margin: 0;
@@ -24,5 +29,9 @@ body {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
+
+  @media (max-width: ${breackpoint.desktop}){
+    max-width: 80%;
+  }
 }
 `

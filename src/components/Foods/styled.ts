@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { breackpoint, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
@@ -73,11 +73,26 @@ export const ModalContent = styled.div`
   z-index: 1;
   position: relative;
 
+  @media (max-width: ${breackpoint.desktop}) {
+    width: 80%;
+  }
+
+  @media (max-width: ${breackpoint.tablet}) {
+    width: 80%;
+    max-height: 100%;
+    display: block;
+  }
+
   img {
     width: 280px;
     height: 280px;
     object-fit: cover;
     margin-right: 24px;
+
+    @media (max-width: ${breackpoint.tablet}) {
+      width: 240px;
+      height: 240px;
+    }
   }
 
   header {
@@ -104,5 +119,12 @@ export const ModalContent = styled.div`
     font-weight: 700;
     background-color: ${cores.berge};
     color: ${cores.salmon};
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid ${cores.berge};
+      background-color: ${cores.salmon};
+      color: ${cores.berge};
+    }
   }
 `

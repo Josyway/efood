@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { ButtonLink } from '../Button/styles'
-import { cores } from '../../styles'
+import { breackpoint, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -13,6 +13,10 @@ export const Imagem = styled.div`
     color: ${cores.salmon};
     font-size: 18px;
     font-weight: 900;
+  }
+
+  @media (max-width: ${breackpoint.tablet}) {
+    display: none;
   }
 `
 
@@ -27,4 +31,5 @@ export const Cart = styled.div`
   color: ${cores.salmon};
   font-size: 18px;
   font-weight: 900;
+  cursor: pointer;
 `
