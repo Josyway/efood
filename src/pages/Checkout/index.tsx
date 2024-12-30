@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch, useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import InputMask from 'react-input-mask'
 
 import Button from '../../components/Button'
@@ -17,11 +17,16 @@ import { open, clear } from '../../store/reducers/cart'
 const Checkout = () => {
   const [payWithCard, setPayWithCard] = useState(false)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [purchase, { data, isSuccess, isLoading }] = usePurchaseMutation()
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   const goToCart = () => dispatch(open())
+
+  const goToHome = () => {
+    navigate('/')
+  }
 
   const form = useFormik({
     initialValues: {
@@ -152,11 +157,7 @@ const Checkout = () => {
               Esperamos que desfrute de uma deliciosa e agradável experiência
               gastronômica. Bom apetite!
             </S.Paragrafo>
-            <Button
-              type="button"
-              title="concluir compra"
-              onClick={() => (window.location.href = '/')}
-            >
+            <Button type="button" title="concluir compra" onClick={goToHome}>
               Concluir
             </Button>
           </>
