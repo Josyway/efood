@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 import { Link } from 'react-router-dom'
 
 export const Post = styled(Link)`
-  background-color: ${cores.branco};
-  border: 1px solid ${cores.salmon};
-  color: ${cores.salmon};
+  background-color: ${colors.white};
+  border: 1px solid ${colors.salmon};
+  color: ${colors.salmon};
   position: relative;
   text-decoration: none;
 
@@ -36,13 +36,13 @@ export const Note = styled.div`
     }
   }
 `
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
   margin-top: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;

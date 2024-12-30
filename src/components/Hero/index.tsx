@@ -1,14 +1,15 @@
 import hero from '../../assets/images/logo/hero.png'
 import logo from '../../assets/images/logo/logo.png'
-import { Title, Vector, Container } from './styles'
+
+import * as S from './styles'
 
 const Hero = () => (
-  <Vector style={{ backgroundImage: `url(${hero})` }}>
-    <Container>
+  <S.Vector style={{ backgroundImage: `url(${hero})` }}>
+    <S.Container>
       <img src={logo} alt="EFOOD" />
-      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
-    </Container>
-  </Vector>
+      <S.Title>Viva experiências gastronômicas no conforto da sua casa</S.Title>
+    </S.Container>
+  </S.Vector>
 )
 
 export default Hero

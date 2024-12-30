@@ -3,7 +3,7 @@ import Tag from '../Tag'
 
 import star from '../../assets/images/logo/star.png'
 
-import { Post, Descricao, Note, Infos, Titulo, Info } from './styles'
+import * as S from './styles'
 
 type Props = {
   id: number
@@ -22,22 +22,22 @@ const Restaurant = ({
   description,
   cover
 }: Props) => (
-  <Post to={`/profile/${id}`}>
+  <S.Post to={`/profile/${id}`}>
     <img src={cover} />
-    <Info>
-      <Infos>
+    <S.Info>
+      <S.Infos>
         {title.map((info) => (
           <Tag key={info}>{type}</Tag>
         ))}
-      </Infos>
-      <Note>
-        <Titulo>{title}</Titulo>
+      </S.Infos>
+      <S.Note>
+        <S.Title>{title}</S.Title>
         <div>
-          <Titulo>{assessment}</Titulo>
+          <S.Title>{assessment}</S.Title>
           <img src={star} />
         </div>
-      </Note>
-      <Descricao>{description}</Descricao>
+      </S.Note>
+      <S.Description>{description}</S.Description>
       <Button
         type="link"
         to={`/profile/${id}`}
@@ -45,8 +45,8 @@ const Restaurant = ({
       >
         Saiba Mais
       </Button>
-    </Info>
-  </Post>
+    </S.Info>
+  </S.Post>
 )
 
 export default Restaurant

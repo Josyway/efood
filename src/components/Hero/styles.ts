@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Vector = styled.div`
   width: 100%;
@@ -21,6 +21,6 @@ export const Title = styled.p`
   font-size: 36px;
   font-weight: 900;
   line-height: 42px;
-  color: ${cores.salmon};
+  color: ${colors.salmon};
   margin: 138px auto;
 `

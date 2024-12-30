@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  berge: '#FFF8F2',
+export const colors = {
+  beige: '#FFF8F2',
   salmon: '#E66767',
-  branco: '#FFFFFF',
-  bergeEscuro: '#FFEBD9'
+  white: '#FFFFFF',
+  beigeDark: '#FFEBD9'
 }
 
 export const breackpoint = {
@@ -22,7 +22,7 @@ export const EstiloGlobal = createGlobalStyle`
 }
 
 body {
-  background-color: ${cores.berge};
+  background-color: ${colors.beige};
   }
 
 .container {

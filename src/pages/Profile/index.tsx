@@ -3,20 +3,26 @@ import { useParams } from 'react-router-dom'
 import FoodsList from '../../components/FoodsList'
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
+
 import { useGetFoodQuery } from '../../services/api'
+import Loader from '../../components/Loader'
+
+type FoodParams = {
+  id: string
+}
 
 const Profile = () => {
-  const { id } = useParams()
+  const { id } = useParams() as FoodParams
 
-  const { data: restaurant } = useGetFoodQuery(id!)
+  const { data: restaurant, isLoading } = useGetFoodQuery(id)
   if (!restaurant) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
   return (
     <>
       <Header />
       <Banner restaurant={restaurant} />
-      <FoodsList foods={restaurant.cardapio} title={''} />
+      <FoodsList foods={restaurant.cardapio} title={''} isLoading={isLoading} />
     </>
   )
 }

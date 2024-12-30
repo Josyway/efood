@@ -1,13 +1,18 @@
-import { Menu } from '../../pages/Home'
 import Foods from '../Foods'
+import Loader from '../Loader'
+
 import { List, Title } from './styled'
 
 export type Props = {
   title: string
   foods: Menu[]
+  isLoading: boolean
 }
 
-const FoodsList = ({ title, foods }: Props) => {
+const FoodsList = ({ title, foods, isLoading }: Props) => {
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <div className="container">
       <Title>{title}</Title>

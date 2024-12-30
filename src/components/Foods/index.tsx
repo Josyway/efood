@@ -1,11 +1,14 @@
-import Button from '../Button'
-import { Card, Descricao, Title, Image, Modal, ModalContent } from './styled'
-import Close from '../../assets/images/logo/fechar.png'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import Button from '../Button'
+
+import Close from '../../assets/images/logo/fechar.png'
 
 import { add, open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
-import { Menu } from '../../pages/Home'
+import { parseToBrl } from '../../utils'
+
+import * as S from './styled'
 
 type Props = {
   id?: number
@@ -15,13 +18,6 @@ type Props = {
   porcao?: string
   preco?: number
   menu: Menu
-}
-
-export const preco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 const Foods = ({ menu }: Props) => {
@@ -34,19 +30,21 @@ const Foods = ({ menu }: Props) => {
 
   const [modalAberto, setModalAberto] = useState(false)
 
-  const getDescription = (description: string) => {
-    if (description.length > 130) {
-      return description.slice(0, 127) + '...'
+  const getDescription = (Text: string) => {
+    if (Text.length > 130) {
+      return Text.slice(0, 127) + '...'
     }
-    return description
+    return Text
   }
 
   return (
     <>
-      <Card>
-        <Image src={menu.foto} />
-        <Title>{menu.nome}</Title>
-        <Descricao>{getDescription(menu.descricao)}</Descricao>
+      <S.Card
+        title={`Clique aqui para saber mais detalhe do prato ${menu.nome}`}
+      >
+        <S.Image src={menu.foto} />
+        <S.Title>{menu.nome}</S.Title>
+        <S.Description>{getDescription(menu.descricao)}</S.Description>
         <Button
           type="button"
           onClick={() => setModalAberto(true)}
@@ -54,9 +52,9 @@ const Foods = ({ menu }: Props) => {
         >
           Adicionar ao carrinho
         </Button>
-      </Card>
-      <Modal className={modalAberto ? 'visible' : ''}>
-        <ModalContent>
+      </S.Card>
+      <S.Modal className={modalAberto ? 'visible' : ''}>
+        <S.ModalContent>
           <img src={menu.foto} />
           <div>
             <header>
@@ -65,13 +63,13 @@ const Foods = ({ menu }: Props) => {
             </header>
             <p>{menu.descricao}</p>
             <p>{menu.porcao}</p>
-            <button onClick={addToCart}>{`Adicione ao carrinho - ${preco(
+            <button onClick={addToCart}>{`Adicione ao carrinho - ${parseToBrl(
               menu.preco
             )}`}</button>
           </div>
-        </ModalContent>
+        </S.ModalContent>
         <div className="overlay" onClick={() => setModalAberto(false)}></div>
-      </Modal>
+      </S.Modal>
     </>
   )
 }

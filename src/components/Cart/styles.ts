@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breackpoint, cores } from '../../styles'
+import { breackpoint, colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 import bin from '../../assets/images/logo/lixeira.png'
@@ -28,7 +28,7 @@ export const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
 `
 export const Sadebar = styled.aside`
-  background-color: ${cores.salmon};
+  background-color: ${colors.salmon};
   z-index: 1;
   padding: 40px 16px 0 16px;
   max-width: 360px;
@@ -41,13 +41,20 @@ export const Sadebar = styled.aside`
   ${ButtonContainer} {
     max-width: 100%;
     width: 100%;
-    background-color: ${cores.berge};
-    color: ${cores.salmon};
+    background-color: ${colors.beige};
+    color: ${colors.salmon};
+  }
+
+  .empyt-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.beige};
+    text-align: center;
   }
 `
 
 export const CartItem = styled.li`
-  background-color: ${cores.bergeEscuro};
+  background-color: ${colors.beigeDark};
   display: flex;
   padding: 8px 0;
   position: relative;
@@ -62,14 +69,14 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.salmon};
+    color: ${colors.salmon};
     font-size: 16px;
     font-weight: bold;
   }
 
   span {
     display: block;
-    color: ${cores.salmon};
+    color: ${colors.salmon};
     font-size: 14px;
     font-weight: bold;
     margin-top: 16px;
@@ -90,6 +97,6 @@ export const CartItem = styled.li`
 export const Prices = styled.p`
   font-weight: bold;
   font-size: 14px;
-  color: ${cores.branco};
+  color: ${colors.white};
   margin-top: 16px;
 `

@@ -1,26 +1,26 @@
 import { styled } from 'styled-components'
-import { breackpoint, cores } from '../../styles'
+import { breackpoint, colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const Card = styled.div`
   width: 320px;
   height: 338px;
-  background-color: ${cores.salmon};
+  background-color: ${colors.salmon};
   padding: 8px;
-  color: ${cores.berge};
+  color: ${colors.beige};
   position: relative;
 
   ${ButtonContainer} {
-    background-color: ${cores.berge};
-    color: ${cores.salmon};
+    background-color: ${colors.beige};
+    color: ${colors.salmon};
     padding: 4px 84px;
     position: absolute;
     bottom: 8px;
 
     &:hover {
-      border: 2px solid ${cores.berge};
-      background-color: ${cores.salmon};
-      color: ${cores.berge};
+      border: 2px solid ${colors.beige};
+      background-color: ${colors.salmon};
+      color: ${colors.beige};
     }
   }
 `
@@ -34,7 +34,7 @@ export const Image = styled.img`
 export const Title = styled.h3`
   display: flex;
 `
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   margin: 8px auto;
 `
@@ -64,8 +64,8 @@ export const Modal = styled.div`
 `
 
 export const ModalContent = styled.div`
-  background-color: ${cores.salmon};
-  color: ${cores.berge};
+  background-color: ${colors.salmon};
+  color: ${colors.beige};
   display: flex;
   padding: 32px;
   max-width: 1024px;
@@ -117,14 +117,14 @@ export const ModalContent = styled.div`
     padding: 4px 7px;
     font-size: 14px;
     font-weight: 700;
-    background-color: ${cores.berge};
-    color: ${cores.salmon};
+    background-color: ${colors.beige};
+    color: ${colors.salmon};
     cursor: pointer;
 
     &:hover {
-      border: 2px solid ${cores.berge};
-      background-color: ${cores.salmon};
-      color: ${cores.berge};
+      border: 2px solid ${colors.beige};
+      background-color: ${colors.salmon};
+      color: ${colors.beige};
     }
   }
 `
