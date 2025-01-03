@@ -30,7 +30,7 @@ export const InputGroup = styled.div<InputGroupProps>`
     margin-bottom: 16px;
 
     &.error {
-      background-color: red;
+      border: 2px solid red;
     }
   }
 `

@@ -49,7 +49,7 @@ const Checkout = () => {
       address: Yup.string()
         .min(5, 'Preencha o endereço corretamente')
         .required('O campo é obrigatorio'),
-      city: Yup.string(),
+      city: Yup.string().required('O campo é obrigatorio'),
       cep: Yup.string()
         .min(8, 'CEP invelido')
         .max(10, '')
@@ -65,7 +65,7 @@ const Checkout = () => {
           payWithCard ? schema.required('O campo é obrigatorio') : schema
         ),
       cardNumber: Yup.string()
-        .min(5, 'Preencha o endereço corretamente')
+        .min(12, 'Preencha o endereço corretamente')
         .when((value, schema) =>
           payWithCard ? schema.required('O campo é obrigatorio') : schema
         ),
@@ -168,7 +168,7 @@ const Checkout = () => {
             <Card title="Pagamento - Valor a pagar R$ 190,90">
               <>
                 <S.InputGroup>
-                  <label htmlFor="cardOwner">Nome no cartão *</label>
+                  <label htmlFor="cardOwner">Nome no cartão</label>
                   <input
                     id="cardOwner"
                     type="text"
@@ -181,7 +181,7 @@ const Checkout = () => {
                 </S.InputGroup>
                 <S.Row>
                   <S.InputGroup>
-                    <label htmlFor="cardNumber">Número do cartão *</label>
+                    <label htmlFor="cardNumber">Número do cartão</label>
                     <InputMask
                       id="cardNumber"
                       type="text"
@@ -189,12 +189,14 @@ const Checkout = () => {
                       value={form.values.cardNumber}
                       onChange={form.handleChange}
                       onBlur={form.handleBlur}
-                      className={checkInputHasError('cardOwner') ? 'error' : ''}
+                      className={
+                        checkInputHasError('cardNumber') ? 'error' : ''
+                      }
                       mask="9999 9999 9999 9999"
                     />
                   </S.InputGroup>
                   <S.InputGroup maxWidth="90px">
-                    <label htmlFor="cardCode">CVV *</label>
+                    <label htmlFor="cardCode">CVV</label>
                     <InputMask
                       id="cardCode"
                       type="text"
@@ -209,7 +211,7 @@ const Checkout = () => {
                 </S.Row>
                 <S.Row>
                   <S.InputGroup maxWidth="155px">
-                    <label htmlFor="expiresMonth">Mês de vencimento *</label>
+                    <label htmlFor="expiresMonth">Mês de vencimento</label>
                     <InputMask
                       id="expiresMonth"
                       type="text"
@@ -224,7 +226,7 @@ const Checkout = () => {
                     />
                   </S.InputGroup>
                   <S.InputGroup maxWidth="155px">
-                    <label htmlFor="expiresYeas">Ano de vencimento *</label>
+                    <label htmlFor="expiresYeas">Ano de vencimento</label>
                     <InputMask
                       id="number"
                       type="text"
@@ -245,14 +247,16 @@ const Checkout = () => {
                     type="submit"
                     onClick={form.handleSubmit}
                   >
-                    {isLoading ? 'Finalizando pagamento' : 'Finalizar compra'}
+                    {isLoading
+                      ? 'Finalizando pagamento'
+                      : 'Finalizar pagamento'}
                   </Button>
                   <Button
                     onClick={() => setPayWithCard(false)}
                     title="Voltar para cadastro de endereço"
                     type="button"
                   >
-                    Voltar para o cadastro
+                    Voltar para a edição de endereço
                   </Button>
                 </div>
               </>
@@ -261,7 +265,7 @@ const Checkout = () => {
             <Card title="Entrega">
               <>
                 <S.InputGroup>
-                  <label htmlFor="receiver">Nome recebedor *</label>
+                  <label htmlFor="receiver">Nome recebedor</label>
                   <input
                     id="receiver"
                     type="text"
@@ -273,7 +277,7 @@ const Checkout = () => {
                   />
                 </S.InputGroup>
                 <S.InputGroup>
-                  <label htmlFor="address">Endereço *</label>
+                  <label htmlFor="address">Endereço</label>
                   <input
                     id="address"
                     type="text"
@@ -298,7 +302,7 @@ const Checkout = () => {
                 </S.InputGroup>
                 <S.Row>
                   <S.InputGroup>
-                    <label htmlFor="cep">CEP *</label>
+                    <label htmlFor="cep">CEP</label>
                     <InputMask
                       id="cep"
                       type="text"
@@ -311,7 +315,7 @@ const Checkout = () => {
                     />
                   </S.InputGroup>
                   <S.InputGroup>
-                    <label htmlFor="number">Número *</label>
+                    <label htmlFor="number">Número</label>
                     <input
                       id="number"
                       type="text"
